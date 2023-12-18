@@ -30,5 +30,24 @@ namespace TTD.Tests {
             int result = calculator.Add(stringNumber);
             Assert.That(result, Is.EqualTo(expectedResult));
         }
+
+        [Test]
+        [TestCase("1,2,0", 3)]
+        [TestCase("0,1,2", 3)]
+        [TestCase("2,1,0", 3)]
+        [TestCase("0,0,0", 0)]
+        public void Add_ThreeNumbers_ReturnsNumber(string stringNumber, int expectedResult) {
+            int result = calculator.Add(stringNumber);
+            Assert.That(result, Is.EqualTo(expectedResult));
+        }
+
+
+        [Test]
+        [TestCase("1,2,0,0,0", 3)]
+        [TestCase("0,1,2,2,1,0,0,0", 6)]
+        public void Add_ManyNumbers_ReturnsNumber(string stringNumber, int expectedResult) {
+            int result = calculator.Add(stringNumber);
+            Assert.That(result, Is.EqualTo(expectedResult));
+        }
     }
 }
