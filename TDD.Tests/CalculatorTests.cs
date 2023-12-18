@@ -1,9 +1,17 @@
 namespace TTD.Tests {
     public class Tests {
 
+        StringCalculator calculator;
+
+        [SetUp]
+        public void Setup() {
+            calculator = new StringCalculator();
+        }
+
         [Test]
-        public void Test1() {
-            Assert.Pass();
+        public void Add_EmptyString_ReturnsZero() {
+            int result = calculator.Add("");
+            Assert.That(result, Is.EqualTo(0));
         }
     }
 }
