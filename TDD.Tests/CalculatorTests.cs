@@ -21,5 +21,14 @@ namespace TTD.Tests {
         public void Add_OneNumber_ReturnsNumber(string stringNumber, int expectedResult) {
             int result = calculator.Add(stringNumber);
         }
+
+        [Test]
+        [TestCase("1,2", 3)]
+        [TestCase("0,2", 2)]
+        [TestCase("0,1", 1)]
+        public void Add_TwoNumbers_ReturnsNumber(string stringNumber, int expectedResult) {
+            int result = calculator.Add(stringNumber);
+            Assert.That(result, Is.EqualTo(expectedResult));
+        }
     }
 }
