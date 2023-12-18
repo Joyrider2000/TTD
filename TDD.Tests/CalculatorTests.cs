@@ -13,5 +13,13 @@ namespace TTD.Tests {
             int result = calculator.Add("");
             Assert.That(result, Is.EqualTo(0));
         }
+
+        [Test]
+        [TestCase("0", 0)]
+        [TestCase("1", 1)]
+        [TestCase("2", 2)]
+        public void Add_OneNumber_ReturnsNumber(string stringNumber, int expectedResult) {
+            int result = calculator.Add(stringNumber);
+        }
     }
 }

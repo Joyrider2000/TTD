@@ -5,7 +5,7 @@ public class StringCalculator {
         if (s == string.Empty) {
             return 0;
         }
-        throw new NotImplementedException();
+        return int.Parse(s);
     }
 }
 
