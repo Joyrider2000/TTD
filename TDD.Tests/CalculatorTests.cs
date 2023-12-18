@@ -49,5 +49,14 @@ namespace TTD.Tests {
             int result = calculator.Add(stringNumber);
             Assert.That(result, Is.EqualTo(expectedResult));
         }
+
+        [Test]
+        [TestCase("1\n2", 3)]
+        [TestCase("0\n2\n1", 3)]
+        [TestCase("1\n2\n1\n2", 6)]
+        public void Add_NewLinesBetweenNumbers_ReturnsSum(string stringNumber, int expectedResult) {
+            int result = calculator.Add(stringNumber);
+            Assert.That(result, Is.EqualTo(expectedResult));
+        }
     }
 }

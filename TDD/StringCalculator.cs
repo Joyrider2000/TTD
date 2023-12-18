@@ -5,8 +5,11 @@ public class StringCalculator {
         if (numbers == string.Empty) {
             return 0;
         }
-        var delimiter = ",";
-        var numberList = numbers.Split(delimiter);
+        char[] delimiters = { ',', '\n' };
+        foreach (var delimiter  in delimiters) {
+            numbers = numbers.Replace(delimiter, delimiters[0]);
+        }
+        var numberList = numbers.Split(delimiters[0]);
 
         int sum = 0;
         foreach ( var number in numberList ) {
